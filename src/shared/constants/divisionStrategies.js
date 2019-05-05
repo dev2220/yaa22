@@ -1,0 +1,1 @@
+export const DIVISION_STRATEGY_ALL_TO_ALL = 'ALL_TO_ALL';

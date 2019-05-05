@@ -1,0 +1,76 @@
+parser: babel-eslint
+
+parserOptions: {
+  parser: babel-eslint
+}
+
+extends:
+  - airbnb
+  - plugin:prettier/recommended
+  - plugin:flowtype/recommended
+
+plugins:
+  - react
+  - babel
+  - jsx-a11y
+  - import
+  - prettier
+  - flowtype
+  - react-hooks
+  - cypress
+
+env:
+  cypress/globals: true
+  browser: true
+  node: true
+  es6: true
+
+rules:
+
+  padded-blocks: off
+  no-unused-vars: [error, {args: after-used, argsIgnorePattern: '^_'}]
+  no-trailing-spaces: [error, { skipBlankLines: true }]
+  react/sort-comp: off #[error, [order: 'static-methods', 'lifecycle', 'everything-else', 'render']]
+  react/prefer-stateless-function: warn
+  react/jsx-filename-extension: off
+  react/require-default-props: off
+  jsx-a11y/href-no-hash: off #todo: href-no-hash was removed but still required by airbnv
+  object-curly-newline: off
+  react/jsx-curly-spacing: [error, never]
+  class-methods-use-this: error
+  react/prop-types: off
+  no-nested-ternary: off
+  no-mixed-operators: [error, {allowSamePrecedence: true}]
+  import/prefer-default-export: off
+  linebreak-style: off
+  global-require: off
+  no-console: off
+  no-alert: off
+  no-use-before-define: off
+  flowtype/no-types-missing-file-annotation: warn
+  jsx-a11y/html-has-lang: off
+  jsx-a11y/anchor-is-valid: off
+  react/react-in-jsx-scope: off
+  no-unused-expressions: [error, {allowTaggedTemplates: true}]
+  curly: [error, all]
+  react-hooks/rules-of-hooks: error
+  react-hooks/exhaustive-deps: warn
+  react/no-array-index-key: warn
+  import/no-named-as-default: warn
+
+#  prettier/prettier: error
+#  max-len: [warn, 120, {ignoreComments: true}]
+#  semi: [error, always]
+#  comma-dangle: [error, always-multiline]
+#  quotes: [error, single]
+#  arrow-parens: [error, as-needed]
+#  babel/object-curly-spacing: [error, never]
+#  object-curly-spacing: off
+#  react/jsx-tag-spacing: [error, {closingSlash: never, beforeSelfClosing: never, afterOpening: never}]
+
+settings:
+  import/resolver:
+    webpack:
+      config:
+        resolve:
+          modules: [ node_modules, src ]

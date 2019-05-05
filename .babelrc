@@ -1,0 +1,56 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": ["last 2 versions", "IE >= 11"]
+        }
+      }
+    ],
+    "@babel/preset-react",
+    "@babel/preset-flow"
+  ],
+  "plugins": [
+    "react-hot-loader/babel",
+    "transform-inline-environment-variables",
+    "transform-react-stateless-component-name",
+    "@babel/plugin-syntax-dynamic-import",
+    [
+      "transform-imports",
+      {
+        "lodash": {
+          "transform": "lodash/${member}",
+          "preventFullImport": true
+        },
+        "lodash/fp": {
+          "transform": "lodash/fp/${member}",
+          "preventFullImport": true
+        },
+        "recompose": {
+          "transform": "recompose/${member}",
+          "preventFullImport": true
+        },
+        "@fortawesome/fontawesome-free-solid": {
+          "transform": "@fortawesome/fontawesome-free-solid/${member}",
+          "preventFullImport": true
+        }
+      }
+    ],
+    ["styled-components", { "displayName": true }],
+    "@babel/plugin-transform-react-constant-elements",
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-proposal-export-default-from",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-export-namespace-from",
+    "@babel/plugin-proposal-optional-chaining"
+  ],
+  "env": {
+    "development": {
+      "plugins": ["react-hot-loader/babel", "flow-react-proptypes", "@babel/plugin-transform-flow-strip-types"]
+    },
+    "production": {
+      "plugins": ["@babel/plugin-transform-flow-strip-types",]
+    }
+  }
+}

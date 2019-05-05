@@ -1,0 +1,6 @@
+common:
+  accounts: Accounts
+  loading: Loading...
+
+errors:
+  errorMessagePrefix: System encountered an error while executing the next action

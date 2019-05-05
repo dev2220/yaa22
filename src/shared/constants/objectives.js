@@ -1,0 +1,1 @@
+export const OBJECTIVE_MOBILE_APP_INSTALLS = '9';

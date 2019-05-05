@@ -1,0 +1,8 @@
+{
+  "eslint.packageManager": "yarn",
+  "javascript.validate.enable": false,
+  "editor.snippetSuggestions": "top",
+  "prettier.eslintIntegration": true,
+  "editor.formatOnSave": true
+}
+

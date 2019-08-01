@@ -14,7 +14,6 @@ const colors = {
   defaultText: '#555555',
   selectedText: '#ffffff',
   brightWhite: '#F1F1F1',
-  // starting from here theme colors according to zeplin
   red: '#c62826',
   green: '#43a047',
   blue: PRIMARY_COLOR,

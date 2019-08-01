@@ -1,6 +1,7 @@
 import {createGlobalStyle} from 'styled-components';
 import 'rc-tooltip/assets/bootstrap_white.css';
 import 'rc-switch/assets/index.css';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import 'rc-dropdown/assets/index.css';
 import {faCheck, faMinus} from '@fortawesome/free-solid-svg-icons';
 import {tooltipCss, switchCss, timePickerCss, dropdownCss} from './externalCss';
@@ -8,7 +9,7 @@ import colors from './colors';
 
 const layoutSizes = {
   navBar: {
-    height: 45,
+    height: {mobile: 65, desktop: 80},
   },
   sideBar: {width: 240},
   sticky: {width: 300},
@@ -52,7 +53,9 @@ export const GlobalStyles = createGlobalStyle`
   @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
   @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
 
-
+  html{
+    direction:rtl;
+  }
   body {
     margin: 0;
     padding: 0;

@@ -1,35 +1,26 @@
 // @flow
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
 import {BrowserRouter} from 'react-router-dom';
-import {createBrowserHistory} from 'history';
-import {I18nextProvider} from 'react-i18next';
-import {ThemeProvider} from 'styled-components';
-import configureStore from 'shared/store/configureStore';
-import {apolloClient} from 'shared/services/api/graphqlService';
-import {i18n} from 'shared/services';
-import theme from 'shared/theme';
-import {ApolloProvider} from 'react-apollo-hooks';
+import styled, {ThemeProvider} from 'styled-components';
+import theme, {GlobalStyles} from 'shared/theme';
 
 import {App} from 'app';
 
-const history = createBrowserHistory();
-
-const store = configureStore({history, i18n});
-
+const Wrapper = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
 const Root = () => (
-  <ApolloProvider client={apolloClient}>
-    <Provider {...{store}}>
-      <BrowserRouter>
-        <I18nextProvider {...{i18n}}>
-          <ThemeProvider {...{theme}}>
-            <App />
-          </ThemeProvider>
-        </I18nextProvider>
-      </BrowserRouter>
-    </Provider>
-  </ApolloProvider>
+  <BrowserRouter>
+    <ThemeProvider {...{theme}}>
+      <Wrapper>
+        <GlobalStyles />
+        <App />
+      </Wrapper>
+    </ThemeProvider>
+  </BrowserRouter>
 );
 
 ReactDOM.render(<Root />, document.getElementById('root'));

@@ -3,14 +3,14 @@ import {Carousel} from 'react-responsive-carousel';
 import styled from 'styled-components';
 import yaa1 from 'shared/assets/yaa1.jpg';
 import yaa2 from 'shared/assets/yaa2.jpg';
-import yaa3 from 'shared/assets/yaa3.jpg';
+import yaa3 from 'shared/assets/yaa3.png';
 
 const Wrapper = styled.div`
   direction: ltr;
 `;
 
 const Img = styled.img`
-  max-height: 220px;
+  max-height: 210px;
 `;
 
 const AppCarousel = () => (

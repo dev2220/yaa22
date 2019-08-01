@@ -7,6 +7,78 @@
   </head>
 
   <body>
-    <div id="root" />
+
+      <div id="root">
+      <style>
+      .loader {
+        width: 25vw;
+        height: 25vw;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        padding:15vw;
+      }
+      .loader::before{
+          content: '';
+          display: block;
+          position: absolute;
+          border-radius: 50%;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 3vw solid transparent;
+          border-top: 3vw skyblue;
+          border-right-color: rgb(165, 40, 40);
+          animation: rotate 1.5s linear infinite;
+          
+      }
+      .loader::after{
+          content: '';
+          display: block;
+          position: absolute;
+          border-radius: 50%;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border: 3vw solid transparent;
+          border-top: 3vw skyblue;
+          border-right-color: rgb(165, 40, 40);
+          width: 50%;
+          height: 50%;
+          left: 25%;
+          top: 25%;
+          border-width: 2.5vw;
+          border-right-color: skyblue;
+          transform: translate(-50%, -50%);
+          animation: rotate 0.75s linear infinite;
+      }
+      
+      @keyframes rotate {
+        0% {
+          transform: rotateZ(0);
+        }
+        100% {
+          transform: rotateZ(360deg);
+        }
+      }
+      .yaaLoader{
+        padding-left: 2.5vw;
+    padding-top: 1.5vw;
+        width: 25vw;
+        height: 25vw;
+      }
+      
+      </style>
+      <div id="loader">
+          <div class="loader">
+            <img class="yaaLoader" src="public/yaa22.png" />
+        </div>
+      </div>
+    </div>
   </body>
-</html>;
+</html>

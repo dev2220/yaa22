@@ -26,7 +26,7 @@ module.exports = (env, argv) => {
     entry: [paths.src],
     output: {
       path: paths.dist,
-      publicPath: isProd ? '/creator/' : '/',
+      publicPath: '/',
       filename: `[name]-[${isProd ? 'contenthash' : 'hash'}].js`,
     },
     plugins: [

@@ -30,11 +30,9 @@ const Root = () => {
   return (
     <>
       <YaaLoader visible={displayLoader} />
-      <Navbar />
-      <App />
-      {/* <Sidebar /> */}
       <Navbar toggleSidebar={toggleSidebar} />
       <Sidebar setIsSideBar={setIsSideBar} isSidebar={isSidebar} />
+      <App />
     </>
   );
 };

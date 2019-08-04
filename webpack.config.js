@@ -18,6 +18,8 @@ module.exports = (env, argv) => {
 
   return {
     // mode: 'development',
+
+    stats: 'errors-only',
     devtool: 'source-map',
     resolve: {
       extensions: ['.js', '.json'],

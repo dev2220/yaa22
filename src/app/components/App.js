@@ -1,16 +1,18 @@
 // @flow
-import React, {useState, useEffect} from 'react';
+import React, {useState, useCallback, useEffect} from 'react';
 import {hot} from 'react-hot-loader';
 import ReactModal from 'react-modal';
 import {YaaLoader} from 'shared/components';
+import Sidebar from './Sidebar';
 import Navbar from './Navbar';
 import Carousel from './Carousel';
 import Body from './Body';
-import Sidebar from './Sidebar';
 
 ReactModal.setAppElement('#root');
 
 const App = () => {
+  const [isSidebar, setIsSideBar] = useState(false);
+  const toggleSidebar = useCallback(() => setIsSideBar(e => !e), []);
   const [displayLoader, setDisplayLoader] = useState(true);
   useEffect(() => {
     setTimeout(() => {
@@ -20,10 +22,10 @@ const App = () => {
   return (
     <>
       <YaaLoader visible={displayLoader} />
-      <Navbar />
+      <Navbar toggleSidebar={toggleSidebar} />
       <Carousel />
       <Body />
-      <Sidebar />
+      <Sidebar setIsSideBar={setIsSideBar} isSidebar={isSidebar} />
     </>
   );
 };

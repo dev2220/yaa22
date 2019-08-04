@@ -27,9 +27,9 @@ const YaaIcon = styled.img.attrs(() => ({src: yaa22}))`
 
 const MenuIcon = styled(SearchIcon).attrs(() => ({icon: faBars}))``;
 
-const Navbar = () => (
+const Navbar = ({toggleSidebar}) => (
   <Root>
-    <MenuIcon />
+    <MenuIcon onClick={toggleSidebar} />
     <YaaIcon />
     <SearchIcon />
   </Root>

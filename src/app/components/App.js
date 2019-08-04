@@ -6,6 +6,7 @@ import {YaaLoader} from 'shared/components';
 import Navbar from './Navbar';
 import Carousel from './Carousel';
 import Body from './Body';
+import Sidebar from './Sidebar';
 
 ReactModal.setAppElement('#root');
 
@@ -22,6 +23,7 @@ const App = () => {
       <Navbar />
       <Carousel />
       <Body />
+      <Sidebar />
     </>
   );
 };

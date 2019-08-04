@@ -31,9 +31,9 @@ const BackIcon = styled(MenuIcon).attrs(() => ({icon: faArrowLeft}))`
   pointer-events: ${({hidden}) => hidden && 'none'};
 `;
 
-const Navbar = ({history: {location, push}}) => (
+const Navbar = ({toggleSidebar, history: {location, push}}) => (
   <Root>
-    <MenuIcon />
+    <MenuIcon onClick={toggleSidebar} />
     <YaaIcon />
     <BackIcon hidden={location.pathname === '/'} onClick={() => push('/')} />
   </Root>

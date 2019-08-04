@@ -1,13 +1,13 @@
 // @flow
-import React, {useState, useEffect} from 'react';
+import React, {useState, useCallback, useEffect} from 'react';
 import {hot} from 'react-hot-loader';
 import ReactModal from 'react-modal';
 import {YaaLoader} from 'shared/components';
 import Defense from 'defense';
 import {Switch, Route} from 'react-router-dom';
+import Sidebar from './Sidebar';
 import Navbar from './Navbar';
 import Body from './Body';
-import Sidebar from './Sidebar';
 
 ReactModal.setAppElement('#root');
 
@@ -19,6 +19,8 @@ const App = () => (
 );
 
 const Root = () => {
+  const [isSidebar, setIsSideBar] = useState(false);
+  const toggleSidebar = useCallback(() => setIsSideBar(e => !e), []);
   const [displayLoader, setDisplayLoader] = useState(true);
   useEffect(() => {
     setTimeout(() => {
@@ -31,6 +33,8 @@ const Root = () => {
       <Navbar />
       <App />
       {/* <Sidebar /> */}
+      <Navbar toggleSidebar={toggleSidebar} />
+      <Sidebar setIsSideBar={setIsSideBar} isSidebar={isSidebar} />
     </>
   );
 };

@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Icon} from 'shared/components';
-import {faSearch, faBars} from '@fortawesome/free-solid-svg-icons';
+import {withRouter} from 'react-router-dom';
+import {faArrowLeft, faBars} from '@fortawesome/free-solid-svg-icons';
 import yaa22 from 'shared/assets/yaa22.png';
 
 const Root = styled.div`
@@ -12,7 +13,7 @@ const Root = styled.div`
   justify-content: space-between;
 `;
 
-const SearchIcon = styled(Icon).attrs(() => ({icon: faSearch}))`
+const MenuIcon = styled(Icon).attrs(() => ({icon: faBars}))`
   height: 100%;
   padding: 10px;
   &&& {
@@ -25,13 +26,16 @@ const YaaIcon = styled.img.attrs(() => ({src: yaa22}))`
   height: 100%;
 `;
 
-const MenuIcon = styled(SearchIcon).attrs(() => ({icon: faBars}))``;
+const BackIcon = styled(MenuIcon).attrs(() => ({icon: faArrowLeft}))`
+  opacity: ${({hidden}) => (hidden ? 0 : 1)};
+  pointer-events: ${({hidden}) => hidden && 'none'};
+`;
 
-const Navbar = () => (
+const Navbar = ({history: {location, push}}) => (
   <Root>
     <MenuIcon />
     <YaaIcon />
-    <SearchIcon />
+    <BackIcon hidden={location.pathname === '/'} onClick={() => push('/')} />
   </Root>
 );
-export default Navbar;
+export default withRouter(Navbar);

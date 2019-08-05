@@ -88,12 +88,6 @@ const Item = ({color, href, to, icon, children}) => (
 const ImagesWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  & > * {
-    margin-bottom: 15px;
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
 `;
 
 const Body = () => (

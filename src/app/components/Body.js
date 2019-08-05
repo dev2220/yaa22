@@ -114,6 +114,7 @@ const Body = () => (
       </Item>
     </Root>
     <ImagesWrapper>
+      <CardImg title="ביקור מח״א" src="assets/commander.jpeg" />
       <CardImg
         href="https://www.mako.co.il/pzm-units/air-force/Article-00897aae7467d41006.htm"
         title="מאקו מספרת על היחידה"

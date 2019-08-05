@@ -17,6 +17,7 @@ const Wrapper = styled(LinkOrDiv)`
 
 const Img = styled(BaseImg)`
   position: absolute;
+  z-index: -1;
   top: 0;
   left: 0;
   right: 0;

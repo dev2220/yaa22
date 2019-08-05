@@ -103,7 +103,7 @@ const Body = () => (
       <Item icon={faRoad} color="rgb(0,0,0)">
         דרכי הגעה
       </Item>
-      <Item icon={faPencilRuler} color="rgb(29,61,99)">
+      <Item to="/protocols" icon={faPencilRuler} color="rgb(29,61,99)">
         נהלי יחידה
       </Item>
       <Item to="/phones" icon={faPhone} color="rgb(216,154,70)">

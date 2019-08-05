@@ -5,6 +5,7 @@ import ReactModal from 'react-modal';
 import {YaaLoader} from 'shared/components';
 import Defense from 'defense';
 import Phones from 'phones';
+import Protocols from 'protocols';
 import {Switch, Route} from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
@@ -17,6 +18,7 @@ const App = () => (
     <Route path="/" exact component={Body} />
     <Route path="/defense" component={Defense} />
     <Route path="/phones" component={Phones} />
+    <Route path="/protocols" component={Protocols} />
   </Switch>
 );
 

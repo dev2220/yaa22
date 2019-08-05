@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import {Icon} from 'shared/components';
 import {withRouter} from 'react-router-dom';
 import {faArrowLeft, faBars} from '@fortawesome/free-solid-svg-icons';
-import yaa22 from 'shared/assets/yaa22.png';
 
 const Root = styled.div`
   height: ${({theme}) => theme.navBar.height.mobile};
@@ -21,7 +20,7 @@ const MenuIcon = styled(Icon).attrs(() => ({icon: faBars}))`
   }
 `;
 
-const YaaIcon = styled.img.attrs(() => ({src: yaa22}))`
+const YaaIcon = styled.img`
   width: auto;
   height: 100%;
 `;
@@ -34,7 +33,7 @@ const BackIcon = styled(MenuIcon).attrs(() => ({icon: faArrowLeft}))`
 const Navbar = ({toggleSidebar, history: {location, push}}) => (
   <Root>
     <MenuIcon onClick={toggleSidebar} />
-    <YaaIcon />
+    <YaaIcon src="yaa22.png" />
     <BackIcon hidden={location.pathname === '/'} onClick={() => push('/')} />
   </Root>
 );

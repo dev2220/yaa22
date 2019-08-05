@@ -75,6 +75,7 @@ const BackDrop = styled.div`
 `;
 
 const Root = styled.div`
+  position: unset;
   display: ${({shouldDisplay}) => (shouldDisplay ? 'block' : 'none')};
 `;
 

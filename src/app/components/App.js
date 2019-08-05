@@ -4,6 +4,7 @@ import {hot} from 'react-hot-loader';
 import ReactModal from 'react-modal';
 import {YaaLoader} from 'shared/components';
 import Defense from 'defense';
+import Phones from 'phones';
 import {Switch, Route} from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
@@ -15,6 +16,7 @@ const App = () => (
   <Switch>
     <Route path="/" exact component={Body} />
     <Route path="/defense" component={Defense} />
+    <Route path="/phones" component={Phones} />
   </Switch>
 );
 

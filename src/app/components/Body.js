@@ -1,11 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import {faRoad, faPencilRuler, faPhone, faShieldAlt} from '@fortawesome/free-solid-svg-icons';
-import {faNewspaper} from '@fortawesome/free-regular-svg-icons';
+import {
+  faRoad,
+  faPencilRuler,
+  faPhone,
+  faShieldAlt,
+  faBalanceScale,
+  faEye,
+} from '@fortawesome/free-solid-svg-icons';
 import {Link} from 'react-router-dom';
 import {faFacebook} from '@fortawesome/free-brands-svg-icons';
-import {Icon as BaseIcon} from '../../shared/components';
-
+import {Icon as BaseIcon, CardImg} from 'shared/components';
 import Carousel from './Carousel';
 
 const Root = styled.div`
@@ -14,7 +19,7 @@ const Root = styled.div`
   margin: 10px;
 `;
 
-const CustomLink = ({href, ...rest}) => (href ? <a {...rest} /> : <Link {...rest} />);
+const CustomLink = ({href, ...rest}) => (href ? <a href={href} {...rest} /> : <Link {...rest} />);
 
 const ItemWrapper = styled(CustomLink)`
   display: flex;
@@ -80,6 +85,17 @@ const Item = ({color, href, to, icon, children}) => (
   </ItemWrapper>
 );
 
+const ImagesWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  & > * {
+    margin-bottom: 15px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+`;
+
 const Body = () => (
   <>
     <Carousel />
@@ -90,19 +106,31 @@ const Body = () => (
       <Item icon={faPencilRuler} color="rgb(29,61,99)">
         נהלי יחידה
       </Item>
-      <Item icon={faPhone} color="rgb(216,154,70)">
+      <Item to="/phones" icon={faPhone} color="rgb(216,154,70)">
         טלפונים חשובים
       </Item>
       <Item to="/defense" icon={faShieldAlt} color="rgb(137,66,127)">
         התגוננות
       </Item>
-      <Item href="https://www.facebook.com/YAA22" icon={faFacebook} color="#3C5A99">
-        פייסבוק יחידתי
+      <Item icon={faEye} color="#3C5A99">
+        חזון היחידה
       </Item>
-      <Item icon={faNewspaper} color="rgb(189,63,60)">
-        כתבות
+      <Item icon={faBalanceScale} color="rgb(189,63,60)">
+        זכויות החיילים
       </Item>
     </Root>
+    <ImagesWrapper>
+      <CardImg
+        href="https://www.mako.co.il/pzm-units/air-force/Article-00897aae7467d41006.htm"
+        title="מאקו מספרת על היחידה"
+        src="assets/mako.png"
+      />
+      <CardImg
+        href="https://www.facebook.com/YAA22"
+        title="פייסבוק יחידתי"
+        src="assets/facebook.png"
+      />
+    </ImagesWrapper>
   </>
 );
 

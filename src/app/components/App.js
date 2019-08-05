@@ -6,6 +6,8 @@ import {YaaLoader} from 'shared/components';
 import Defense from 'defense';
 import Phones from 'phones';
 import Protocols from 'protocols';
+import Vision from 'vision';
+import Roads from 'roads';
 import {Switch, Route} from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
@@ -19,6 +21,8 @@ const App = () => (
     <Route path="/defense" component={Defense} />
     <Route path="/phones" component={Phones} />
     <Route path="/protocols" component={Protocols} />
+    <Route path="/roads" component={Roads} />
+    <Route path="/vision" component={Vision} />
   </Switch>
 );
 

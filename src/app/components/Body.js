@@ -9,7 +9,6 @@ import {
   faEye,
 } from '@fortawesome/free-solid-svg-icons';
 import {Link} from 'react-router-dom';
-import {faFacebook} from '@fortawesome/free-brands-svg-icons';
 import {Icon as BaseIcon, CardImg} from 'shared/components';
 import Carousel from './Carousel';
 
@@ -94,7 +93,7 @@ const Body = () => (
   <>
     <Carousel />
     <Root>
-      <Item icon={faRoad} color="rgb(0,0,0)">
+      <Item to="/roads" icon={faRoad} color="rgb(0,0,0)">
         דרכי הגעה
       </Item>
       <Item to="/protocols" icon={faPencilRuler} color="rgb(29,61,99)">
@@ -106,7 +105,7 @@ const Body = () => (
       <Item to="/defense" icon={faShieldAlt} color="rgb(137,66,127)">
         התגוננות
       </Item>
-      <Item icon={faEye} color="#3C5A99">
+      <Item to="/vision" icon={faEye} color="#3C5A99">
         חזון היחידה
       </Item>
       <Item icon={faBalanceScale} color="rgb(189,63,60)">

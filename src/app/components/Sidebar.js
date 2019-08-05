@@ -44,10 +44,10 @@ const Item = ({icon, children, isSelected}) => (
 const Sidebar = ({setIsSideBar, isSidebar}) => (
   <Root isSidebar={isSidebar} onClickOutside={() => setIsSideBar(false)}>
     <Item isSelected icon={faHome}>
-      טקסט
+      בבנייה
     </Item>
-    <Item icon={faCheck}>טקסט2</Item>
-    <Item icon={faVideo}>טקסט3</Item>
+    <Item icon={faCheck}>בבנייה2</Item>
+    <Item icon={faVideo}>בבנייה3</Item>
   </Root>
 );
 export default Sidebar;

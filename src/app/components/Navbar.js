@@ -10,6 +10,12 @@ const Root = styled.div`
   padding: 4px;
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
 `;
 
 const IconWithOutExtraProps = ({isHidden: _ignore, ...rest}) => <Icon {...rest} />;

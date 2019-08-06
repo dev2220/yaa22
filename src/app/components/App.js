@@ -1,12 +1,14 @@
 // @flow
 import React, {useState, useCallback, useEffect} from 'react';
 import {hot} from 'react-hot-loader';
+import styled from 'styled-components';
 import ReactModal from 'react-modal';
 import {YaaLoader} from 'shared/components';
 import Defense from 'defense';
 import Phones from 'phones';
 import Protocols from 'protocols';
 import Vision from 'vision';
+import Gallery from 'gallery';
 import Roads from 'roads';
 import Wiki from 'wiki';
 import NewSoldier from 'newsoldier';
@@ -17,6 +19,14 @@ import Body from './Body';
 
 ReactModal.setAppElement('#root');
 
+const security = new Array(10)
+  .fill(0)
+  .map((val, idx) => `assets/secure/${idx + 1}.jpg`)
+  .reverse();
+const quality = new Array(9)
+  .fill(0)
+  .map((val, idx) => `assets/quality/${idx + 1}.jpg`)
+  .reverse();
 const App = () => (
   <Switch>
     <Route path="/" exact component={Body} />
@@ -27,8 +37,14 @@ const App = () => (
     <Route path="/vision" component={Vision} />
     <Route path="/wiki" component={Wiki} />
     <Route path="/newsoldier" component={NewSoldier} />
+    <Route path="/security" component={() => <Gallery imgs={security} />} />
+    <Route path="/quality" component={() => <Gallery imgs={quality} />} />
   </Switch>
 );
+
+const Wrapper = styled.div`
+  padding-top: ${({theme}) => theme.navBar.height.mobile};
+`;
 
 const Root = () => {
   const [isSidebar, setIsSideBar] = useState(false);
@@ -40,12 +56,12 @@ const Root = () => {
     }, 1500);
   }, []);
   return (
-    <>
+    <Wrapper>
       <YaaLoader visible={displayLoader} />
       <Navbar toggleSidebar={toggleSidebar} />
       <Sidebar setIsSideBar={setIsSideBar} isSidebar={isSidebar} />
       <App />
-    </>
+    </Wrapper>
   );
 };
 

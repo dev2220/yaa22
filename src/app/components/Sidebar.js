@@ -2,7 +2,7 @@ import React, {useCallback} from 'react';
 import styled, {css} from 'styled-components';
 import Icon from 'shared/components/Icon';
 import {Link, Route} from 'react-router-dom';
-import {faHome, faUser} from '@fortawesome/free-solid-svg-icons';
+import {faHome, faUser, faShieldAlt, faUsers} from '@fortawesome/free-solid-svg-icons';
 import {faWikipediaW} from '@fortawesome/free-brands-svg-icons';
 import ClickOutSide from 'react-click-outside';
 
@@ -26,7 +26,7 @@ const activeLink = css`
   background-color: rgba(120, 150, 255, 0.8);
 `;
 
-const LinkWithoutExtraProps = ({isActive, ...rest}) => <Link {...rest} />;
+const LinkWithoutExtraProps = ({isActive: _ignore, ...rest}) => <Link {...rest} />;
 
 const MyLink = styled(LinkWithoutExtraProps)`
   color: black;
@@ -81,6 +81,12 @@ const Sidebar = ({setIsSideBar, isSidebar}) => {
       </Item>
       <Item closeSideBar={closeSideBar} to="/newsoldier" icon={faUser}>
         פנקס לחייל החדש
+      </Item>
+      <Item closeSideBar={closeSideBar} to="/security" icon={faShieldAlt}>
+        פנקס בטחון
+      </Item>
+      <Item closeSideBar={closeSideBar} to="/quality" icon={faUsers}>
+        פנקס איכות
       </Item>
     </Root>
   );

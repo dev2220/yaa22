@@ -7,6 +7,7 @@ const StyledImg = styled.img`
   display: ${({isLoaded}) => !isLoaded && 'none'};
   width: 100%;
   height: 100%;
+  background-color: white;
 `;
 
 const Img = ({alt, fallback, className, loading, ...props}) => {

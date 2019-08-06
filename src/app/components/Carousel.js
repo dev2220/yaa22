@@ -9,6 +9,7 @@ const Wrapper = styled.div`
 
 const Img = styled(BaseImg)`
   height: 210px;
+  background: white;
 `;
 
 const imgs = ['assets/yaa1.jpg', 'assets/yaa2.jpg', 'assets/yaa3.png'];

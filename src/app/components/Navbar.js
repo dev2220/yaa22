@@ -12,7 +12,9 @@ const Root = styled.div`
   justify-content: space-between;
 `;
 
-const MenuIcon = styled(Icon).attrs(() => ({icon: faBars}))`
+const IconWithOutExtraProps = ({isHidden: _ignore, ...rest}) => <Icon {...rest} />;
+
+const MenuIcon = styled(IconWithOutExtraProps).attrs(() => ({icon: faBars}))`
   height: 100%;
   padding: 10px;
   &&& {

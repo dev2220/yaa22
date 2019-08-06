@@ -2,7 +2,8 @@ import React, {useCallback} from 'react';
 import styled, {css} from 'styled-components';
 import Icon from 'shared/components/Icon';
 import {Link, Route} from 'react-router-dom';
-import {faHome, faCheck} from '@fortawesome/free-solid-svg-icons';
+import {faHome, faUser} from '@fortawesome/free-solid-svg-icons';
+import {faWikipediaW} from '@fortawesome/free-brands-svg-icons';
 import ClickOutSide from 'react-click-outside';
 
 const ClickOutSideWithoutExtraProps = ({isSidebar: _ignore, ...rest}) => <ClickOutSide {...rest} />;
@@ -18,18 +19,23 @@ const Root = styled(ClickOutSideWithoutExtraProps)`
   height: 100vh;
   width: 100vw;
   transition: left 0.5s;
+  border-left: 1px solid ${({theme}) => theme.palette.greyWhite};
 `;
 
 const activeLink = css`
   background-color: rgba(120, 150, 255, 0.8);
 `;
 
-const MyLink = styled(Link)`
+const LinkWithoutExtraProps = ({isActive, ...rest}) => <Link {...rest} />;
+
+const MyLink = styled(LinkWithoutExtraProps)`
   color: black;
   display: flex;
   align-items: center;
   border-bottom: rgba(200, 200, 200, 0.7) 1px solid;
   padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
   &:focus,
   &:active {
     color: black;
@@ -70,8 +76,11 @@ const Sidebar = ({setIsSideBar, isSidebar}) => {
       <Item closeSideBar={closeSideBar} to="/" isSelected icon={faHome}>
         ראשי
       </Item>
-      <Item closeSideBar={closeSideBar} to="/wiki" icon={faCheck}>
+      <Item closeSideBar={closeSideBar} to="/wiki" icon={faWikipediaW}>
         ויקיפדיה
+      </Item>
+      <Item closeSideBar={closeSideBar} to="/newsoldier" icon={faUser}>
+        פנקס לחייל החדש
       </Item>
     </Root>
   );

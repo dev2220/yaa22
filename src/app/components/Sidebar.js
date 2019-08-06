@@ -1,10 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, {useCallback} from 'react';
+import styled, {css} from 'styled-components';
 import Icon from 'shared/components/Icon';
-import {faHome, faCheck, faVideo} from '@fortawesome/free-solid-svg-icons';
+import {Link, Route} from 'react-router-dom';
+import {faHome, faCheck} from '@fortawesome/free-solid-svg-icons';
 import ClickOutSide from 'react-click-outside';
 
-const Root = styled(ClickOutSide)`
+const ClickOutSideWithoutExtraProps = ({isSidebar: _ignore, ...rest}) => <ClickOutSide {...rest} />;
+
+const Root = styled(ClickOutSideWithoutExtraProps)`
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -17,37 +20,60 @@ const Root = styled(ClickOutSide)`
   transition: left 0.5s;
 `;
 
-const Wrapper = styled.div`
+const activeLink = css`
+  background-color: rgba(120, 150, 255, 0.8);
+`;
+
+const MyLink = styled(Link)`
+  color: black;
   display: flex;
   align-items: center;
   border-bottom: rgba(200, 200, 200, 0.7) 1px solid;
-  background-color: ${({isSelected}) => isSelected && 'rgba(120, 150, 255, 0.8)'};
+  padding: 15px;
+  &:focus,
+  &:active {
+    color: black;
+    text-decoration: none;
+  }
+  ${({isActive}) => isActive && activeLink}
 `;
 
-const Text = styled.p``;
+const Wrapper = ({to, ...rest}) => (
+  <Route exact path={to}>
+    {({match}) => <MyLink {...rest} to={to} isActive={match} />}
+  </Route>
+);
+
+const Text = styled.p`
+  margin: 0;
+`;
 
 const StyledIcon = styled(Icon)`
-  margin: 0 15px;
+  margin-left: 10px;
   &&& {
     width: 30px;
     height: 30px;
   }
 `;
 
-const Item = ({icon, children, isSelected}) => (
-  <Wrapper isSelected={isSelected}>
+const Item = ({icon, closeSideBar, to, children}) => (
+  <Wrapper to={to} onClick={closeSideBar}>
     <StyledIcon icon={icon} />
     <Text>{children}</Text>
   </Wrapper>
 );
 
-const Sidebar = ({setIsSideBar, isSidebar}) => (
-  <Root isSidebar={isSidebar} onClickOutside={() => setIsSideBar(false)}>
-    <Item isSelected icon={faHome}>
-      בבנייה
-    </Item>
-    <Item icon={faCheck}>בבנייה2</Item>
-    <Item icon={faVideo}>בבנייה3</Item>
-  </Root>
-);
+const Sidebar = ({setIsSideBar, isSidebar}) => {
+  const closeSideBar = useCallback(() => setIsSideBar(false), [setIsSideBar]);
+  return (
+    <Root isSidebar={isSidebar} onClickOutside={() => setIsSideBar(false)}>
+      <Item closeSideBar={closeSideBar} to="/" isSelected icon={faHome}>
+        ראשי
+      </Item>
+      <Item closeSideBar={closeSideBar} to="/wiki" icon={faCheck}>
+        ויקיפדיה
+      </Item>
+    </Root>
+  );
+};
 export default Sidebar;

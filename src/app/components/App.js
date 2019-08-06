@@ -8,6 +8,7 @@ import Phones from 'phones';
 import Protocols from 'protocols';
 import Vision from 'vision';
 import Roads from 'roads';
+import Wiki from 'wiki';
 import {Switch, Route} from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
@@ -23,6 +24,7 @@ const App = () => (
     <Route path="/protocols" component={Protocols} />
     <Route path="/roads" component={Roads} />
     <Route path="/vision" component={Vision} />
+    <Route path="/wiki" component={Wiki} />
   </Switch>
 );
 

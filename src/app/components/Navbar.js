@@ -26,15 +26,15 @@ const YaaIcon = styled.img`
 `;
 
 const BackIcon = styled(MenuIcon).attrs(() => ({icon: faArrowLeft}))`
-  opacity: ${({hidden}) => (hidden ? 0 : 1)};
-  pointer-events: ${({hidden}) => hidden && 'none'};
+  opacity: ${({isHidden}) => (isHidden ? 0 : 1)};
+  pointer-events: ${({isHidden}) => isHidden && 'none'};
 `;
 
 const Navbar = ({toggleSidebar, history: {location, push}}) => (
   <Root>
     <MenuIcon onClick={toggleSidebar} />
     <YaaIcon src="yaa22.png" />
-    <BackIcon hidden={location.pathname === '/'} onClick={() => push('/')} />
+    <BackIcon isHidden={location.pathname === '/'} onClick={() => push('/')} />
   </Root>
 );
 export default withRouter(Navbar);

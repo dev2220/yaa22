@@ -12,11 +12,16 @@ import Gallery from 'gallery';
 import Roads from 'roads';
 import Wiki from 'wiki';
 import NewSoldier from 'newsoldier';
+import posed, {PoseGroup} from 'react-pose';
 import {Switch, Route} from 'react-router-dom';
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
 import Body from './Body';
 
+const RouteContainer = posed.div({
+  enter: {opacity: 1, beforeChildren: true},
+  exit: {opacity: 0},
+});
 ReactModal.setAppElement('#root');
 
 const security = new Array(10)
@@ -28,18 +33,26 @@ const quality = new Array(9)
   .map((val, idx) => `assets/quality/${idx + 1}.jpg`)
   .reverse();
 const App = () => (
-  <Switch>
-    <Route path="/" exact component={Body} />
-    <Route path="/defense" component={Defense} />
-    <Route path="/phones" component={Phones} />
-    <Route path="/protocols" component={Protocols} />
-    <Route path="/roads" component={Roads} />
-    <Route path="/vision" component={Vision} />
-    <Route path="/wiki" component={Wiki} />
-    <Route path="/newsoldier" component={NewSoldier} />
-    <Route path="/security" component={() => <Gallery imgs={security} />} />
-    <Route path="/quality" component={() => <Gallery imgs={quality} />} />
-  </Switch>
+  <Route
+    render={({location}) => (
+      <PoseGroup>
+        <RouteContainer key={location.key}>
+          <Switch location={location}>
+            <Route path="/" exact component={Body} />
+            <Route path="/defense" component={Defense} />
+            <Route path="/phones" component={Phones} />
+            <Route path="/protocols" component={Protocols} />
+            <Route path="/roads" component={Roads} />
+            <Route path="/vision" component={Vision} />
+            <Route path="/wiki" component={Wiki} />
+            <Route path="/newsoldier" component={NewSoldier} />
+            <Route path="/security" component={() => <Gallery imgs={security} />} />
+            <Route path="/quality" component={() => <Gallery imgs={quality} />} />
+          </Switch>
+        </RouteContainer>
+      </PoseGroup>
+    )}
+  />
 );
 
 const Wrapper = styled.div`

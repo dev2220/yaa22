@@ -9,7 +9,8 @@ import {
   faEye,
 } from '@fortawesome/free-solid-svg-icons';
 import {Link} from 'react-router-dom';
-import {Icon as BaseIcon, CardImg} from 'shared/components';
+import {Icon as BaseIcon, CardImg, Img} from 'shared/components';
+import {Carousel as ReactCarousel} from 'react-responsive-carousel';
 import Carousel from './Carousel';
 
 const Root = styled.div`
@@ -88,6 +89,23 @@ const ImagesWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
+const SecondCarouselWrapper = styled.div`
+  direction: ltr;
+`;
+const BlackCover = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(transparent, transparent, black);
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+`;
 
 const Body = () => (
   <>
@@ -113,7 +131,22 @@ const Body = () => (
       </Item>
     </Root>
     <ImagesWrapper>
-      <CardImg src="assets/commander.jpeg">ביקור מח״א</CardImg>
+      <SecondCarouselWrapper>
+        <ReactCarousel
+          showThumbs={false}
+          showStatus={false}
+          showArrows={false}
+          className="presentation-mode"
+          autoPlay
+          infiniteLoop
+        >
+          <Img style={{height: 180}} src="assets/commander/commander.jpeg" />
+          <Img style={{height: 180}} src="assets/commander/1.jpeg" />
+          <Img style={{height: 180}} src="assets/commander/2.jpeg" />
+          <Img style={{height: 180}} src="assets/commander/3.jpeg" />
+        </ReactCarousel>
+        <BlackCover>ביקור מח״א</BlackCover>
+      </SecondCarouselWrapper>
       <CardImg
         href="https://www.mako.co.il/pzm-units/air-force/Article-00897aae7467d41006.htm"
         src="assets/mako.png"

@@ -1,7 +1,7 @@
 // @flow
-import React from 'react';
+import React, {useEffect} from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter} from 'react-router-dom';
+import {BrowserRouter, withRouter} from 'react-router-dom';
 import styled, {ThemeProvider} from 'styled-components';
 import theme, {GlobalStyles} from 'shared/theme';
 
@@ -12,12 +12,21 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
+const ScrollToTop = withRouter(({children, location: {pathname}}) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return children || null;
+});
 const Root = () => (
   <BrowserRouter>
     <ThemeProvider {...{theme}}>
       <Wrapper>
         <GlobalStyles />
-        <App />
+        <ScrollToTop>
+          <App />
+        </ScrollToTop>
       </Wrapper>
     </ThemeProvider>
   </BrowserRouter>

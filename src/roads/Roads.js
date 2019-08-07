@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {CardImg} from 'shared/components';
 
 const Root = styled.div`
   display: flex;
@@ -7,12 +8,6 @@ const Root = styled.div`
   padding-top: 20px;
   align-items: center;
   padding: 30px;
-`;
-
-const Header = styled.h1`
-  text-decoration: underline;
-  line-height: 1.2;
-  text-align: center;
 `;
 
 const Text = styled.span`
@@ -27,8 +22,8 @@ const Wrapper = styled.div`
 `;
 const Roads = () => (
   <Wrapper>
+    <CardImg src="assets/roads.jpg">דרכי הגעה / יציאה ליחידה:</CardImg>
     <Root>
-      <Header>דרכי הגעה / יציאה ליחידה:</Header>
       <Text>
         א. קו אגד 301- מגיע לצומת תל נוף. קו זה יוצא מהתחנה המרכזית בת"א לאשקלון החל מהשעה 5:40 כל
         15-30 דק', עובר דרך תחנת הרכבת ברחובות ובכל הצמתים בדרך לבסיס.

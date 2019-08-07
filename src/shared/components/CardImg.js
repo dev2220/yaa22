@@ -30,10 +30,10 @@ const Title = styled.span`
   color: white;
 `;
 
-const CardImg = ({src, href, title}) => (
+const CardImg = ({src, href, children}) => (
   <Wrapper href={href}>
     <Img src={src} fallback={<Loading />} />
-    <Title>{title}</Title>
+    <Title>{children}</Title>
   </Wrapper>
 );
 

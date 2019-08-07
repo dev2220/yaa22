@@ -113,17 +113,16 @@ const Body = () => (
       </Item>
     </Root>
     <ImagesWrapper>
-      <CardImg title="ביקור מח״א" src="assets/commander.jpeg" />
+      <CardImg src="assets/commander.jpeg">ביקור מח״א</CardImg>
       <CardImg
         href="https://www.mako.co.il/pzm-units/air-force/Article-00897aae7467d41006.htm"
-        title="מאקו מספרת על היחידה"
         src="assets/mako.png"
-      />
-      <CardImg
-        href="https://www.facebook.com/YAA22"
-        title="פייסבוק יחידתי"
-        src="assets/facebook.png"
-      />
+      >
+        מאקו מספרת על היחידה
+      </CardImg>
+      <CardImg href="https://www.facebook.com/YAA22" src="assets/facebook.png">
+        פייסבוק יחידתי
+      </CardImg>
     </ImagesWrapper>
   </>
 );

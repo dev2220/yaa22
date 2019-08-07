@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {CardImg} from 'shared/components';
 
 const Root = styled.div`
   display: flex;
@@ -7,12 +8,6 @@ const Root = styled.div`
   padding-top: 20px;
   align-items: center;
   padding: 30px;
-`;
-
-const Header = styled.h1`
-  text-decoration: underline;
-  line-height: 1.2;
-  text-align: center;
 `;
 
 const Text = styled.span`
@@ -25,10 +20,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
-const Defense = () => (
+const Rules = () => (
   <Wrapper>
+    <CardImg src="assets/rules.png"> נהלי יחידה</CardImg>
     <Root>
-      <Header>נהלי יחידה</Header>
       <b>כללי:</b>
       <Text>
         השירות ביחידה הינו ברמת פעילות ד', ניתן ללון במגורי החיילים בבסיס. יציאה בתנאי "יומיות" –
@@ -57,4 +52,4 @@ const Defense = () => (
   </Wrapper>
 );
 
-export default Defense;
+export default Rules;

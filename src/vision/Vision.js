@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {CardImg} from 'shared/components';
 
 const Root = styled.div`
   display: flex;
@@ -28,15 +29,15 @@ const Wrapper = styled.div`
 `;
 const Defense = () => (
   <Wrapper>
+    <CardImg src="assets/purpose.jpeg">חזון היחידה</CardImg>
     <Root>
-      <Header>חזון היחידה</Header>
       <Text>
         יחידה אחת מובילה ויוזמת, בחזית הטכנולוגיה והאיכות. אבן הראשה בהשגת עצמאות אחזקתית והשאת
         הזמינות לסד״כ חיל האוויר. אנשים מצויינים שותפים למשימות החיל,
       </Text>
     </Root>
+    <CardImg src="assets/vision.jpeg">ייעוד היחידה</CardImg>
     <Root>
-      <Header>ייעוד היחידה:</Header>
       <Text>
         יחידה המתמחה בתחזוקה והשבחה של כלי טיס ומכוללים ברמת דרג ד׳, תוך פיתוח ידע, מתן פתרונות
         הנדסיים, ושימוש ביכולות ייצור מתקדמות למתן עצמאות הורדת עלויות הקיום של חיל האוויר במימוש

@@ -36,7 +36,7 @@ const App = () => (
   <Route
     render={({location}) => (
       <PoseGroup>
-        <RouteContainer key={location.key}>
+        <RouteContainer key={JSON.stringify(location)}>
           <Switch location={location}>
             <Route path="/" exact component={Body} />
             <Route path="/defense" component={Defense} />

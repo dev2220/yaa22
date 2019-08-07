@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {CardImg} from 'shared/components';
 
 const Root = styled.div`
   display: flex;
@@ -27,8 +28,8 @@ const Wrapper = styled.div`
 `;
 const Defense = () => (
   <Wrapper>
+    <CardImg src="assets/alarm.jpg">סדר פעולות לחייל בזמן כוננות ספיגה</CardImg>
     <Root>
-      <Header>סדר פעולות לחייל בזמן כוננות ספיגה</Header>
       <Text>
         1. מרגע שמיעת אזעקה עולה ויורדת עליך לפעול באופן מידי על פי סדר הפעולות הבא: היכנס למרחב
         ממוגן ע"פ השילוט המוצב באזור הימצאותך.
@@ -47,8 +48,8 @@ const Defense = () => (
         במרחב.
       </Text>
     </Root>
+    <CardImg src="assets/fire.jpeg">גורמים אופיינים לדליקות:</CardImg>
     <Root>
-      <Header>￼￼￼גורמים אופיינים לדליקות:</Header>
       <Text>רשלנות ואי זהירות.</Text>
       <Text>אש גלויה בקרבת חומרים דליקים.</Text>
       <Text>משחקים באש.</Text>
@@ -59,8 +60,8 @@ const Defense = () => (
       <Text>לחץ פתאומי של גורם וחומרים (מכבש).</Text>
       <Text>איתני טבע (ברק, הר געש, ריכוז קרני שמש)</Text>
     </Root>
+    <CardImg src="assets/doanddont.png">עשה ואל תעשה בכיבוי דליקות</CardImg>
     <Root>
-      <Header>עשה ואל תעשה בכיבוי דליקות</Header>
       <Text>גילית דליקה. פעל מיד לכיבויה.</Text>
       <Text>הזעק מיד את חיילי היחידה.</Text>
       <Text>נתק את מקור זרם החשמל למוקד האש.</Text>

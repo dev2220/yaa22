@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {CardImg} from 'shared/components';
 
 const Root = styled.div`
   display: flex;
@@ -24,6 +25,7 @@ const Headline = styled(Text)`
 
 const Phones = () => (
   <Root>
+    <CardImg src="assets/contacts.webp">טלפונים חשובים</CardImg>
     <Phone href="tel:+972542479065">
       <Headline>ממונת יוהל"ם- ציונה בנימין</Headline>
       <Text>054-2479065</Text>

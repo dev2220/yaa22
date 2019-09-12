@@ -1,9 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import {Icon} from 'shared/components';
 import {withRouter} from 'react-router-dom';
 import {faArrowLeft, faBars} from '@fortawesome/free-solid-svg-icons';
 
+const anim = keyframes`
+ from{
+ transform: rotateY(0deg);
+ }
+ to{
+ transform: rotateY(360deg);
+}`;
 const Root = styled.div`
   height: ${({theme}) => theme.navBar.height.mobile};
   border-bottom: 1px solid ${({theme}) => theme.palette.greyWhite};
@@ -31,6 +38,7 @@ const MenuIcon = styled(IconWithOutExtraProps).attrs(() => ({icon: faBars}))`
 const YaaIcon = styled.img`
   width: auto;
   height: 100%;
+  animation: ${anim} 2s infinite ease-in-out;
 `;
 
 const BackIcon = styled(MenuIcon).attrs(() => ({icon: faArrowLeft}))`

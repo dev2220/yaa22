@@ -123,11 +123,9 @@ const Body = () => (
       <Item to="/defense" icon={faShieldAlt} color="rgb(137,66,127)">
         התגוננות
       </Item>
+      <Item color="rgb(189,63,60)" />
       <Item to="/vision" icon={faEye} color="#3C5A99">
         חזון היחידה
-      </Item>
-      <Item icon={faBalanceScale} color="rgb(189,63,60)">
-        זכויות החיילים
       </Item>
     </Root>
     <ImagesWrapper>

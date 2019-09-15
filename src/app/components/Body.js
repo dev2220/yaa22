@@ -145,15 +145,6 @@ const Body = () => (
         </ReactCarousel>
         <BlackCover>ביקור מח״א</BlackCover>
       </SecondCarouselWrapper>
-      <CardImg
-        href="https://www.mako.co.il/pzm-units/air-force/Article-00897aae7467d41006.htm"
-        src="assets/mako.png"
-      >
-        מאקו מספרת על היחידה
-      </CardImg>
-      <CardImg href="https://www.facebook.com/YAA22" src="assets/facebook.png">
-        פייסבוק יחידתי
-      </CardImg>
     </ImagesWrapper>
   </>
 );

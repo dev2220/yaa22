@@ -19,7 +19,6 @@ const Root = styled.div`
   padding: 4px;
   background-size: 100%;
   display: flex;
-  background-image: url('assets/clouds.png');
   position: fixed;
   z-index: 1;
   top: 0;

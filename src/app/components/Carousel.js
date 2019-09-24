@@ -12,7 +12,18 @@ const Img = styled(BaseImg)`
   background: white;
 `;
 
-const imgs = ['assets/yaa1.jpg', 'assets/yaa2.jpg', 'assets/yaa3.png'];
+const imgs = [
+  'assets/carousel/1.jpg',
+  'assets/carousel/2.jpg',
+  'assets/carousel/3.jpg',
+  'assets/carousel/4.jpg',
+  'assets/carousel/5.jpg',
+  'assets/carousel/6.jpg',
+  'assets/carousel/7.jpg',
+  'assets/carousel/8.jpg',
+  'assets/carousel/9.jpg',
+  'assets/carousel/10.jpg',
+];
 
 const AppCarousel = () => (
   <Wrapper>

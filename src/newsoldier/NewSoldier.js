@@ -58,7 +58,7 @@ const NewSolder = () => (
           מאחל הצלחה בהמשך הדרך,
         </p>
         <p className="text-left">
-          אל"מ מיכאל מלכה
+          
           <br />
           מפקד היחידה
         </p>

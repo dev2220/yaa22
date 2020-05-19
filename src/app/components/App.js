@@ -28,7 +28,7 @@ const security = new Array(10)
   .fill(0)
   .map((val, idx) => `assets/secure/${idx + 1}.jpg`)
   .reverse();
-const quality = new Array(9)
+const quality = new Array(13)
   .fill(0)
   .map((val, idx) => `assets/quality/${idx + 1}.jpg`)
   .reverse();
